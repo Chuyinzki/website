@@ -23,10 +23,11 @@ jobs:
           aws-region: us-west-1
 
       - name: Sync to S3
-        run: aws s3 sync . s3://chuyinzki.com --delete
+        run: aws s3 sync ./site s3://chuyinzki.com --delete
 
       - name: Invalidate CloudFront
         run: |
           aws cloudfront create-invalidation \
             --distribution-id E1RTZLIYMKP0PM \
             --paths "/*"
+
