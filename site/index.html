@@ -35,6 +35,7 @@
 								<li><a href="#intro">Intro</a></li>
 								<li><a href="#work">Work</a></li>
 								<li><a href="#about">About</a></li>
+								<li><a href="#website">Website</a></li>
 								<li><a href="#contact">Contact</a></li>
 							</ul>
 						</nav>
@@ -108,6 +109,33 @@
 									<li>MBA, Information Systems, University of North Alabama (2018 - 2019)</li>
 									<li>BS, Computer Science, University of California, San Diego (2010 - 2015)</li>
 								</ul>
+							</article>
+
+						<!-- Website -->
+							<article id="website">
+								<h2 class="major">Website</h2>
+								<p>This site is built and deployed as a globally available static application using AWS services and GitHub automation.</p>
+
+								<h3>Website Tech Stack</h3>
+								<ul>
+									<li>Source code and version control: GitHub (backup and CI/CD source of truth)</li>
+									<li>CI/CD and deployment: GitHub Actions using OIDC to assume an AWS IAM role (no long-lived stored secrets)</li>
+									<li>Hosting: AWS S3 (static site)</li>
+									<li>CDN and global delivery: AWS CloudFront (edge caching)</li>
+									<li>SSL/HTTPS: AWS Certificate Manager (ACM)</li>
+									<li>DNS and routing: AWS Route 53</li>
+									<li>Domain registrar: Namecheap</li>
+								</ul>
+
+								<h3>Folder Structure</h3>
+								<ul>
+									<li>`site/` contains `index.html`, `assets/`, and `images/` and is synced to S3</li>
+									<li>`.github/` contains workflow files and is not deployed</li>
+								</ul>
+								<p>Website source code: <a href="https://github.com/Chuyinzki/website" target="_blank" rel="noopener noreferrer">github.com/Chuyinzki/website</a></p>
+
+								<h3>Deployment Flow</h3>
+								<p>GitHub -> OIDC -> IAM Role -> S3 -> CloudFront -> Route 53 -> User</p>
 							</article>
 
 						<!-- Contact -->
