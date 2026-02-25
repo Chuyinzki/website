@@ -1,30 +1,36 @@
-Dimension by HTML5 UP
-html5up.net | @ajlkn
-Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+Jesus Villegas - Personal Website
 
+This repository contains my personal website and portfolio.
 
-This is Dimension, a fun little one-pager with modal-ized (is that a word?) "pages"
-and a cool depth effect (click on a menu item to see what I mean). Simple, fully
-responsive, and kitted out with all the usual pre-styled elements you'd expect.
-Hope you dig it :)
+About
+- Senior Software Engineer profile site with experience, competencies, and contact information.
+- Built as a static website for reliability, fast global delivery, and low maintenance.
 
-Demo images* courtesy of Unsplash, a radtastic collection of CC0 (public domain) images
-you can use for pretty much whatever.
+Tech Stack
+- Frontend: HTML, CSS, JavaScript (static site template customized with my content)
+- Hosting: AWS S3
+- CDN: AWS CloudFront
+- SSL: AWS Certificate Manager (ACM)
+- DNS: AWS Route 53
+- Domain Registrar: Namecheap
+- CI/CD: GitHub Actions using OIDC to assume an AWS IAM role (no long-lived AWS secrets in repo)
 
-(* = not included)
+Repository Structure
+- site/                  Deployable static files
+- site/index.html        Main page
+- site/assets/           CSS, JS, fonts
+- site/images/           Images
+- .github/workflows/     Deployment workflow (not deployed to S3)
 
-AJ
-aj@lkn.io | @ajlkn
+Deployment Flow
+GitHub -> OIDC -> AWS IAM Role -> S3 -> CloudFront -> Route 53 -> User
 
+Deployment Notes
+- GitHub Actions deploys only the `site/` folder to S3.
+- CloudFront invalidation runs after deployment so updates are visible quickly.
 
-Credits:
+Local Preview
+- Open `site/index.html` in a browser.
 
-	Demo Images:
-		Unsplash (unsplash.com)
-
-	Icons:
-		Font Awesome (fontawesome.io)
-
-	Other:
-		jQuery (jquery.com)
-		Responsive Tools (github.com/ajlkn/responsive-tools)
+Repository
+- Source: https://github.com/Chuyinzki/website
