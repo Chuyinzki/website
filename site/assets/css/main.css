@@ -700,9 +700,16 @@ input, select, textarea {
 			width: 100%;
 		}
 
-			.image.main img {
-				width: 100%;
-			}
+		.image.main img {
+			width: 100%;
+		}
+
+		#intro .image.main img.intro-portrait {
+			max-height: 32rem;
+			object-fit: cover;
+			object-position: center 18%;
+			width: 100%;
+		}
 
 		@media screen and (max-width: 736px) {
 
